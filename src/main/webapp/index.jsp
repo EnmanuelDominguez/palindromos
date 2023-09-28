@@ -40,20 +40,22 @@
                         <div class="field">
                             <label class="label">Frase o palabra</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Text input">
+                                <input class="input" type="text" placeholder="Text input" name="inputText">
                             </div>
                         </div>
-                            <div class="field is-grouped">
-                                <div class="control">
-                                    <button class="button is-link">Submit</button>
-                                </div>
-                                <div class="control">
-                                    <button class="button is-link is-light">Cancel</button>
-                                </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link">Submit</button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-link is-light">Cancel</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
