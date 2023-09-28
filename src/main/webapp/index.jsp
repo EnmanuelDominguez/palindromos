@@ -36,26 +36,25 @@
                         </p>
                     </div>
 
-                    <div class="column">
+                    <form onsubmit="" method="post">
                         <div class="field">
                             <label class="label">Frase o palabra</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Text input" name="inputText">
+                                <input class="input" type="text" id="inputText" placeholder="Text input" name="inputText">
                             </div>
                         </div>
                         <div class="field is-grouped">
                             <div class="control">
-                                <button class="button is-link">Submit</button>
+                                <button class="button is-link" type="submit">Submit</button>
                             </div>
                             <div class="control">
                                 <button class="button is-link is-light">Cancel</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
