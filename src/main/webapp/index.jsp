@@ -54,7 +54,16 @@
                     </form>
 
                 </div>
-                <div id="result" style="margin-top: 10px;"></div>
+                <table>
+                    <tr>
+                        <th style="border:1px solid black; padding: 1vh">Palindromo</th>
+                        <th style="border:1px solid black; padding: 1vh">Resultado</th>
+                    </tr>
+                    <tr>
+                        <td id="palindromeCell"></td>
+                        <td id="result"></td>
+                    </tr>
+                </table>
                     </div>
                 </div>
             </div>
@@ -90,13 +99,11 @@
 
         console.log(reversedInput);
         //Verificación entre el texto normal y el texto invertido
-        if (defaultInput === reversedInput) {
-            console.log("es un palindromo");
-            document.getElementById("result").innerHTML = "Es un palíndromo.";
-        } else {
-            console.log("no es un palindromo");
-            document.getElementById("result").innerHTML = "No es un palíndromo.";
-        }
+        var isPalindrome = (defaultInput === reversedInput)
+
+        // Actualizar la tabla con el palindromo y el resultado
+        document.getElementById("palindromeCell").innerHTML = inputText;
+        document.getElementById("result").innerHTML = isPalindrome ? "Es un palíndromo" : "No es un palíndromo";
 
         return false;
     }
