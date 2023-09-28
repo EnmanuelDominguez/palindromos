@@ -52,7 +52,9 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
+                <div id="result" style="margin-top: 10px;"></div>
                     </div>
                 </div>
             </div>
@@ -90,8 +92,10 @@
         //Verificación entre el texto normal y el texto invertido
         if (defaultInput === reversedInput) {
             console.log("es un palindromo");
+            document.getElementById("result").innerHTML = "Es un palíndromo.";
         } else {
             console.log("no es un palindromo");
+            document.getElementById("result").innerHTML = "No es un palíndromo.";
         }
 
         return false;
