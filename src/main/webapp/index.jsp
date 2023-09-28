@@ -36,7 +36,7 @@
                         </p>
                     </div>
 
-                    <form onsubmit="" method="post">
+                    <form onsubmit="return verificarPalindromo()" method="post">
                         <div class="field">
                             <label class="label">Frase o palabra</label>
                             <div class="control">
@@ -73,5 +73,29 @@
         </div>
     </section>
 </div>
+<script>
+    function verificarPalindromo() {
+
+        //Obtener texto del input
+        var inputText = document.getElementById("inputText").value;
+
+        //Reemplazar el texto del input por minusculas y eliminar espacios
+        var defaultInput = inputText.toLowerCase().replace(/\s/g, '');
+
+        console.log(defaultInput);
+        //Invertir la frase
+        var reversedInput = defaultInput.split('').reverse().join('');
+
+        console.log(reversedInput);
+        //Verificación entre el texto normal y el texto invertido
+        if (defaultInput === reversedInput) {
+            console.log("es un palindromo");
+        } else {
+            console.log("no es un palindromo");
+        }
+
+        return false;
+    }
+</script>
 </body>
 </html>
