@@ -4,6 +4,19 @@ public class Student {
     public String nombre;
     public int id;
     private String cedula;
+    public Student(int id, String cedula, String nombre){
+        this.id = id;
+        this.cedula = cedula;
+        this.nombre = nombre;
+    }
+
+    public Student(String cedula){
+        this.cedula = cedula;
+    }
+
+    public Student() {
+
+    }
 
     public int getId() {
         return id;
