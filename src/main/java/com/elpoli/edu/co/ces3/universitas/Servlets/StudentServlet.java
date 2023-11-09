@@ -3,8 +3,10 @@ package com.elpoli.edu.co.ces3.universitas.Servlets;
 import com.elpoli.edu.co.ces3.universitas.Objects.Student;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +16,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 @WebServlet(name = "studentServlet", value = "/student")
-public class StudentServlet extends HttpServlet {
+public class StudentServlet extends MyServlet {
     private String message;
     private GsonBuilder gsonBuilder;
     private Gson gson;
@@ -59,6 +61,20 @@ public class StudentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, ServletException {
+        resp.setContentType("application/json");
+        ServletOutputStream out = resp.getOutputStream();
+        JsonObject body = this.getParamsFromPost(req);
+
+        Student student = new Student(
+                body.get("id").getAsInt(),
+                body.get("cedula").getAsString(),
+                body.get("nombre").getAsString()
+        );
+
+        this.students.add(student);
+        out.println(gson.toJson(student));
+        out.flush();
+
     }
 
     public void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
